@@ -1,12 +1,14 @@
 import {geometricas} from "./geometricas.js"; // importamos nuestra librerioa que calcula figurar
+let btnCuadrado = document.querySelector('#btnCuadrado');
+let btnTriangulo = document.querySelector('#btnTriangulo');
+let btnCirculo = document.querySelector('#btnCirculo');
+let figuras;
 
 
-// le pasamos como parametro : ladoCuadrado,3lados del triangulo
-let figuras =geometricas(5,4,4,2); 
 //nos devolvera un array con objetos,estos obj tienen el area,perimetro y nombre de la figura
 
 
-//creamosuna funcion qué busca la figura con un nombre que le demos
+//creamos una funcion qué busca la figura con un nombre que le demos
 function buscarFigura(figuraNombre){
     let figuraResuelta
     figuras.forEach(function(figura){  //recorremos el array 
@@ -18,8 +20,49 @@ function buscarFigura(figuraNombre){
     return figuraResuelta //retornamos solo el obj de la figura que queremos
 }
 
-function buscarCuadrado(){ // creamos una función para buscar el cuadrado
-    console.log(buscarFigura("cuadrado"));
-}
+btnCuadrado.addEventListener('click',()=>{
+    let cuadradoLado = Number(document.querySelector('#cuadradoLado').value);
+   figuras =geometricas(cuadradoLado,0,0,0,0,0); 
+    let cuadrado = buscarFigura("cuadrado");
+    let result = document.querySelector('.result');
+    let span = document.createElement('span');
+    span.innerHTML = `
+        El area es : ${cuadrado.area_cuadrado} <br>
+        El perimetro es: ${cuadrado.perimetro_cuadrado}
+    
+    `
+    result.appendChild(span); 
+})
 
-buscarCuadrado()
+btnTriangulo.addEventListener('click',()=>{
+    let trianguloLado = Number(document.querySelector('#trianguloLado').value);
+    let trianguloBase = Number(document.querySelector('#triangulobase').value);
+   figuras =geometricas(0,trianguloLado,trianguloLado,trianguloBase,0,0); 
+    let triangulo = buscarFigura("triangulo");
+    let result = document.querySelector('.triangulo .result');
+    let span = document.createElement('span');
+    span.innerHTML = `
+        El area es : ${triangulo.area_triangulo} <br>
+        El perimetro es: ${triangulo.perimetro_triangulo}
+    
+    `
+    result.appendChild(span); 
+})
+
+
+btnCirculo.addEventListener('click',()=>{
+    let circuloRadio = Number(document.querySelector('#radioCirculo').value);
+    let circuloDiametro = Number(document.querySelector('#diametroCirculo').value);
+    figuras =geometricas(0,0,0,0,circuloDiametro,circuloRadio); 
+    let circulo = buscarFigura("circulo");
+    let result = document.querySelector('.circulo .result');
+    let span = document.createElement('span');
+    span.innerHTML = `
+        El area es : ${circulo.area_circulo} <br>
+        El perimetro es: ${circulo.perimetro_circulo}
+    
+    `
+    result.appendChild(span); 
+})
+
+

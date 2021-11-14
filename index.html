@@ -4,9 +4,63 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;500&family=Poppins:wght@100;200;400&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./CSS/styles.css">
     <title>Proyecto curso JS</title>
 </head>
 <body>
+
+    <header class="menu">
+
+    </header>
+
+    <section id="geometricas" class="geometricas">
+        <div class="cuadrado card">
+            <img class="figureIMG" src="https://i.pinimg.com/originals/39/98/08/399808c7787f2c87cfa2b217deb4245b.png" alt="cuadrado">
+            <form action="/">
+                <label for="cuadradoLado">Ingresa un lado del cuadrado</label>
+                <input type="text" id="cuadradoLado">
+                <input type="button" id="btnCuadrado" value="Calcular">
+                <p class="result"></p>
+            </form>
+        </div>
+
+        <div class="triangulo card">
+            <img class="figureIMG" src="https://assets.wprock.fr/emoji/joypixels/512/1f53a.png" alt="triangulo">
+            <form action="/">
+                <label for="trianguloLado" >Ingresa un lado del triangulo</label>
+                <input type="text" id="trianguloLado">
+                <label for="triangulobase">Ingresa la base del triangulo</label>
+                <input type="text" id="triangulobase">
+
+                <input type="button" id="btnTriangulo" value="Calcular">
+                <p class="result"></p>
+            </form>
+        </div>
+
+
+        <div class="circulo card">
+            <img class="figureIMG" src="https://image.jimcdn.com/app/cms/image/transf/dimension=464x10000:format=png/path/s5b0d65c1516ae465/image/i38ab00db318e2db3/version/1601921797/para-qu%C3%A9-sirve-el-circulo-azul-telcel.png" alt="circulo">
+            <form action="/">
+                <label for="diametroCirculo" >Ingresa el diametro del circulo</label>
+                <input type="text" id="diametroCirculo" name="diametroCirculo">
+                <label for="radioCirculo">Ingresa el radio del circulo</label>
+                <input type="text" id="radioCirculo" name="radioCirculo">
+
+                <input type="button" id="btnCirculo" value="Calcular">
+                <p class="result"></p>
+            </form>
+        </div>
+
+
+
+
+
+    </section>
+
+
     <script type="module" src="./JS/index.js"></script>
 </body>
 </html>

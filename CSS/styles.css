@@ -1,0 +1,55 @@
+*{
+    box-sizing: border-box;
+    font-family: 'Open Sans', sans-serif;
+}
+
+.figureIMG{
+    width: 100px;
+}
+
+.geometricas{
+    width: 80%;
+    margin: 0 auto;
+}
+
+.card{
+    width: 100%;
+    margin: 0 auto;
+    background-color: #121F3D;
+    border-radius: 10px;
+    margin-bottom: 20px;
+    padding: 6px;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    color: white;
+}
+
+.geometricas form{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.geometricas label,input{
+    margin-bottom: 15px;
+}
+
+.geometricas input[type=text]{
+    border: solid 1px black;
+    border-radius: 10px;
+    padding: 10px;
+}
+
+.geometricas input[type=text]:focus{
+    outline: #89C73A 1px solid;
+}
+
+.geometricas input[type=button]{
+    outline: none;
+    border:none;
+    width:100px;
+    padding: 10px;
+    border-radius: 10px;
+    background:radial-gradient(circle at 87.5% 12.5%, #cde35a 0, #aed74b 25%, #89c739 50%, #60b729 75%, #32ab21 100%);
+}

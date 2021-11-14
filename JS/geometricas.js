@@ -7,19 +7,28 @@ function calcularCuadrado(lado){
     return cuadrado
 }
 
-function calcularTriangulo(lado){
+function calcularTriangulo(lado,lado2,base){
     let triangulo = {
         nombre: "triangulo",
-        perimetro_cuadrado: lado + lado + lado,
-        area_cuadrado: lado * lado   
+        perimetro_triangulo: lado + lado2 + base,
+        area_triangulo: (base * lado) / 2   
     }
     return triangulo
 }
 
-export function geometricas(cuadradoLado,trianguloLadoOne,trianguloLadoTwo,trianguloLadoThree){
+function calcularCirculo(diametro,radio){
+    let circulo={
+        nombre:"circulo",
+        perimetro_circulo: diametro * Math.PI,
+        area_circulo: Math.PI * Math.pow(radio,2)
+    }
+    return circulo
+}
+
+export function geometricas(cuadradoLado,trianguloLadoOne,trianguloLadoTwo,trianguloLadoThree,diametro,radio){
     const geometricasArr = [];  
     geometricasArr.push(calcularCuadrado(cuadradoLado));
     geometricasArr.push(calcularTriangulo(trianguloLadoOne,trianguloLadoTwo,trianguloLadoThree))
-
+    geometricasArr.push(calcularCirculo(diametro,radio))
     return geometricasArr
 }
