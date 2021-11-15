@@ -1,5 +1,6 @@
 import {geometricas} from "./geometricas.js"; // importamos nuestra librerioa que calcula figurar
-import {calcularAltura} from "./geometricas.js"
+import {calcularAltura} from "./geometricas.js";
+import {clear} from "./limpiar.js";
 
 let btnCuadrado = document.querySelector('#btnCuadrado');
 let btnTriangulo = document.querySelector('#btnTriangulo');
@@ -28,7 +29,11 @@ btnCuadrado.addEventListener('click',()=>{
    figuras =geometricas(cuadradoLado,0,0,0,0,0); 
     let cuadrado = buscarFigura("cuadrado");
     let result = document.querySelector('.result');
+    
+    clear("spanContainer");
+
     let span = document.createElement('span');
+    span.id="spanContainer";
     span.innerHTML = `
         El area es : ${cuadrado.area_cuadrado} <br>
         El perimetro es: ${cuadrado.perimetro_cuadrado}
@@ -43,7 +48,10 @@ btnTriangulo.addEventListener('click',()=>{
    figuras =geometricas(0,trianguloLado,trianguloLado,trianguloBase,0,0); 
     let triangulo = buscarFigura("triangulo");
     let result = document.querySelector('.triangulo .result');
+    clear("spanContainer");
+
     let span = document.createElement('span');
+    span.id="spanContainer";
     span.innerHTML = `
         El area es : ${triangulo.area_triangulo} <br>
         El perimetro es: ${triangulo.perimetro_triangulo}
@@ -59,7 +67,9 @@ btnCirculo.addEventListener('click',()=>{
     figuras =geometricas(0,0,0,0,circuloDiametro,circuloRadio); 
     let circulo = buscarFigura("circulo");
     let result = document.querySelector('.circulo .result');
+    clear("spanContainer")
     let span = document.createElement('span');
+    span.id="spanContainer";
     span.innerHTML = `
         El area es : ${circulo.area_circulo} <br>
         El perimetro es: ${circulo.perimetro_circulo}
@@ -76,7 +86,11 @@ btnIso.addEventListener('click',()=>{
 
     let altura = calcularAltura(lado1,lado2,lado3);
     let result = document.querySelector('.isosceles .result');
+   
+    clear("spanContainer");
+
     let span = document.createElement('span');
+    span.id="spanContainer";
     span.innerHTML = `
         La altura es : ${altura}
     `
