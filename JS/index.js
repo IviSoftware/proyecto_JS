@@ -1,10 +1,12 @@
 import {geometricas} from "./geometricas.js"; // importamos nuestra librerioa que calcula figurar
-import {calcularAltura} from "./geometricas.js"
+import {calcularAltura} from "./geometricas.js";
+import {precioReal} from "./descuento.js";
 
 let btnCuadrado = document.querySelector('#btnCuadrado');
 let btnTriangulo = document.querySelector('#btnTriangulo');
 let btnCirculo = document.querySelector('#btnCirculo');
 let btnIso = document.querySelector('#btnIso');
+let btnDescuento = document.getElementById('btnDescuento');
 let figuras;
 
 
@@ -81,5 +83,19 @@ btnIso.addEventListener('click',()=>{
         La altura es : ${altura}
     `
     result.appendChild(span); 
+})
+
+btnDescuento.addEventListener('click',()=>{
+    let user_precio = Number(document.getElementById('precio').value);
+    let user_descuento = Number(document.getElementById('descuento').value);
+    let precio = precioReal(user_precio,user_descuento);
+
+    let result = document.querySelector('.descuentos .result');
+    let span = document.createElement('span');
+    span.innerHTML = `
+        El precio que vas a pagar aplicado el descuento es : ${precio}
+    `
+    result.appendChild(span); 
+    
 })
 
