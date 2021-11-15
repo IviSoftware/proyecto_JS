@@ -32,3 +32,10 @@ export function geometricas(cuadradoLado,trianguloLadoOne,trianguloLadoTwo,trian
     geometricasArr.push(calcularCirculo(diametro,radio))
     return geometricasArr
 }
+
+export function calcularAltura(lado1,lado2,lado3){
+   if(lado1 == lado2){
+        let altura = Math.pow(lado1,2) - Math.pow(lado3/2,2);
+        return altura
+    } 
+}

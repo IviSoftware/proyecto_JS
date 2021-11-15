@@ -1,7 +1,10 @@
 import {geometricas} from "./geometricas.js"; // importamos nuestra librerioa que calcula figurar
+import {calcularAltura} from "./geometricas.js"
+
 let btnCuadrado = document.querySelector('#btnCuadrado');
 let btnTriangulo = document.querySelector('#btnTriangulo');
 let btnCirculo = document.querySelector('#btnCirculo');
+let btnIso = document.querySelector('#btnIso');
 let figuras;
 
 
@@ -65,4 +68,18 @@ btnCirculo.addEventListener('click',()=>{
     result.appendChild(span); 
 })
 
+btnIso.addEventListener('click',()=>{
+    let lado1 = Number(document.getElementById('isoLado2').value),
+    lado2 = Number(document.getElementById('isoLado2').value),
+    lado3 = Number(document.getElementById('isoLado2').value)
+
+
+    let altura = calcularAltura(lado1,lado2,lado3);
+    let result = document.querySelector('.isosceles .result');
+    let span = document.createElement('span');
+    span.innerHTML = `
+        La altura es : ${altura}
+    `
+    result.appendChild(span); 
+})
 
