@@ -105,7 +105,10 @@ btnDescuento.addEventListener('click',()=>{
     let precio = precioReal(user_precio,user_descuento);
 
     let result = document.querySelector('.descuentos .result');
+    clear("spanContainer");
+
     let span = document.createElement('span');
+    span.id="spanContainer";
     span.innerHTML = `
         El precio que vas a pagar aplicado el descuento es : ${precio}
     `
