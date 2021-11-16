@@ -2,12 +2,14 @@ import {geometricas} from "./geometricas.js"; // importamos nuestra librerioa qu
 import {calcularAltura} from "./geometricas.js";
 import {clear} from "./limpiar.js";
 import {precioReal} from "./descuento.js";
+import {cupon} from "./cupon.js"
 
 let btnCuadrado = document.querySelector('#btnCuadrado');
 let btnTriangulo = document.querySelector('#btnTriangulo');
 let btnCirculo = document.querySelector('#btnCirculo');
 let btnIso = document.querySelector('#btnIso');
 let btnDescuento = document.getElementById('btnDescuento');
+let btnCupones = document.getElementById('btnCupones');
 let figuras;
 
 
@@ -116,3 +118,18 @@ btnDescuento.addEventListener('click',()=>{
     
 })
 
+btnCupones.addEventListener('click',()=>{
+    let user_precio = Number(document.getElementById('precioCuponTxt').value);
+    let cuponUser = document.getElementById('cuponUser').value;
+    let precioConCupon = cupon(cuponUser,user_precio);
+
+    let result = document.querySelector('.cupones .result');
+    clear("spanContainer");
+
+    let span = document.createElement('span');
+    span.id="spanContainer";
+    span.innerHTML = `
+        El precio que vas a pagar aplicado el cupon es : ${precioConCupon}
+    `
+    result.appendChild(span);
+})
