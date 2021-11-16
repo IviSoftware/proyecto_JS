@@ -129,7 +129,7 @@ btnCupones.addEventListener('click',()=>{
     let span = document.createElement('span');
     span.id="spanContainer";
     span.innerHTML = `
-        El precio que vas a pagar aplicado el cupon es : ${precioConCupon}
+        El precio que vas a pagar aplicado el cupon es : $ ${precioConCupon}
     `
     result.appendChild(span);
 })
