@@ -3,6 +3,9 @@ import {calcularAltura} from "./geometricas.js";
 import {clear} from "./limpiar.js";
 import {precioReal} from "./descuento.js";
 import {cupon} from "./cupon.js"
+import {calcularMediaAritmetica} from "./promedio.js"
+import {mediana} from "./mediana.js"
+import {moda} from "./moda.js"
 
 let btnCuadrado = document.querySelector('#btnCuadrado');
 let btnTriangulo = document.querySelector('#btnTriangulo');
@@ -133,3 +136,8 @@ btnCupones.addEventListener('click',()=>{
     `
     result.appendChild(span);
 })
+
+
+console.log(calcularMediaAritmetica([3,65,2,423])) //calcula la media artimetica de un array
+mediana()
+moda();
